@@ -1,3 +1,17 @@
+/*====================**
+About license of strz.c
+
+Some ideas are from sl(https://github.com/mtoyoda/sl).:
+Copyright 1993,1998,2014-2015 Toyoda Masashi (mtoyoda@acm.org)
+
+license of "sl" from here
+Everyone is permitted to do anything on this program including copying,
+modifying, and improving, unless you try to pretend that you wrote it.
+i.e., the above copyright notice has to appear in all copies.
+THE AUTHOR DISCLAIMS ANY RESPONSIBILITY WITH REGARD TO THIS SOFTWARE.
+license of "sl" to here
+**====================*/
+
 #include <ncurses.h>
 #include <unistd.h>
 
