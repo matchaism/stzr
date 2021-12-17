@@ -30,6 +30,11 @@ stzrを開ける
 ./stzr -p
 ```
 
+ロング缶
+```
+./stzr -l
+```
+
 ### CAUTION
 これはslコマンド(Copyright 1993,1998,2014 Toyoda Masashi)のオマージュです。一部参考にした要素がございます。LICENSEによれば、すべてが自作であるかのように振る舞わない限り、当該プログラムのコードのコピーや修正、改善を認めるとのこと。
  * https://github.com/mtoyoda/sl
