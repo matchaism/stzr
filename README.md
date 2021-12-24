@@ -3,7 +3,7 @@
 
 stzrを開ける
 ```
-./stzl
+./stzr
 ```
 
 #### ラベルオプション
@@ -22,6 +22,7 @@ stzrを開ける
 |   -P   |      PEACH      |
 |   -G   |      GRAPE      |
 |   -D   |       DRY       |
+|   -M   |      MELON      |
 
 #### その他のオプション
 
@@ -35,6 +36,17 @@ stzrを開ける
 ./stzr -l
 ```
 
+スペースシャトル (350ml)
+```
+./stzr -s
+```
+
+ロケット (ロング缶)
+```
+./stzr -r
+```
+
 ### CAUTION
 これはslコマンド(Copyright 1993,1998,2014 Toyoda Masashi)のオマージュです。一部参考にした要素がございます。LICENSEによれば、すべてが自作であるかのように振る舞わない限り、当該プログラムのコードのコピーや修正、改善を認めるとのこと。
- * https://github.com/mtoyoda/sl
+
+https://github.com/mtoyoda/sl

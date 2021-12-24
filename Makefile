@@ -5,3 +5,9 @@ stzr: stzr.c AA.h
 
 clean:
 	rm -f stzr
+
+
+##############################
+# Coded by macchanism
+# https://github.com/macchanism/stzr
+##############################
