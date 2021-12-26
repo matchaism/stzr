@@ -145,7 +145,7 @@ void normal(){
 
 void spaceshuttle(){
   //----- DEFINE -----//
-  int H, W, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
+  int H, W, FireHeight = 8, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
   getmaxyx(stdscr, H, W);
   h = (H - ArtHeight + 1) / 2;
   w = (W - ArtWidth + 1) / 2;
@@ -194,7 +194,7 @@ void spaceshuttle(){
   for(int i = 0; i < FontHeight; i++) mvaddstr(hf + i, wf, Ignition[i]);
   refresh(); usleep(500000);
 
-  for(int i = 0; i < 4; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
+  for(int i = 0; i < FireHeight; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
   refresh(); sleep(1);
 
 
@@ -203,25 +203,25 @@ void spaceshuttle(){
     mvaddstr(h - 2 + i, w, SpaceShuttle[i]);
     if(i == 12) mvaddstr(h + 10, w + 4, label[LABEL]);
   }
-  for(int i = 0; i < 9; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
+  for(int i = 0; i < FireHeight; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
   refresh(); usleep(500000);
 
 
-  for(int i = 0; i < 25; i++){
+  for(int i = 0, k = h + ArtHeight + FireHeight; k >= 0; i++, k--){
     clear();
     for(int j = 0; j < ArtHeight; j++){
       mvaddstr(h - 3 - i + j, w, SpaceShuttle[j]);
       if(j == 12) mvaddstr(h + 9 - i, w + 4, label[LABEL]);
     }
-    for(int j = 0; j < 8; j++) mvaddstr(h + 17 - i + j, w, SSFire[j]);
-    refresh(); usleep(150000 - i * 6000);
+    for(int j = 0; j < FireHeight; j++) mvaddstr(h + 17 - i + j, w, SSFire[j]);
+    refresh(); usleep(5000 * (h + ArtHeight + FireHeight + 3) - i * 5000);
   }
 }
 
 
 void rocket(){
   //----- DEFINE -----//
-  int H, W, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
+  int H, W, FireHeight = 5, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
   getmaxyx(stdscr, H, W);
   h = (H - ArtHeight + 1) / 2;
   w = (W - ArtWidth + 1) / 2;
@@ -249,10 +249,10 @@ void rocket(){
 
 
   //----- Take off -----//
-  for(int i = 0; i < 30; i++){
+  for(int i = 0, k = h + ArtHeight + FireHeight; k >= 0; i++, k--){
     clear();
-    for(int j = 0; j < 28; j++) mvaddstr(h + j - i, w, RocketIgnited[j]);
-    refresh(); usleep(180000 - i * 6000);
+    for(int j = 0; j < ArtHeight + FireHeight; j++) mvaddstr(h + j - i, w, RocketIgnited[j]);
+    refresh(); usleep(5000 * (h + ArtHeight + FireHeight + 3) - i * 5000);
   }
   refresh(); sleep(1);
 }
