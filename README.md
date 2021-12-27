@@ -6,6 +6,8 @@ stzrを開ける
 ./stzr
 ```
 
+![](sample.gif)
+
 #### ラベルオプション
 
 | option |      label      |
