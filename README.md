@@ -1,54 +1,76 @@
 # stzr
-### 実行
+## What is this?
+ターミナル上に簡素なアニメーションが表示されるコマンド
 
-stzrを開ける
+
+## Usage
+### Prepare
+あらかじめ、`gcc`でコンパイルする必要がある。`ncurses`を外部のライブラリとして指定すること(`gcc -o stzr stzr.c -l ncurses`)。
+
+`Makefile`を使うことを用意した。`make`や`make stzr`で使うとよい。
+
+### Run
+stzrを開ける(コマンド実行)
 ```
 ./stzr
 ```
 
 ![](sample.gif)
 
-#### ラベルオプション
-
+### ラベルオプション
 | option |      label      |
 | ------ | --------------- |
-|        |                 |
 |   -F   |   GRAPEFRUIT    |
 |   -L   |      LEMON      |
 |   -A   |      APPLE      |
 |   -O   |     ORANGE      |
 |   -Y   |      YUZU       |
-|   -K   |   KANJUKU-UME   |
+|   -U   |   KANJUKU-UME   |
 |   -C   | CITRUS DEPRESSA |
 |   -B   |  BITTER  LEMON  |
 |   -P   |      PEACH      |
 |   -G   |      GRAPE      |
 |   -D   |       DRY       |
 |   -M   |      MELON      |
+|   -R   |     ACEROLA     |
+|   -I   |    PINEAPPLE    |
+|   -K   |      MIKAN      |
 
-#### その他のオプション
 
-プルタブを自ら開ける
+### その他のオプション
+#### プルタブを自ら開ける
 ```
 ./stzr -p
 ```
+ユーザのキーボード入力をトリガーに、プルタブが開く
 
-ロング缶
+#### ロング缶(500ml)
 ```
 ./stzr -l
 ```
 
-スペースシャトル (350ml)
+#### スペースシャトル(350ml)
 ```
 ./stzr -s
 ```
 
-ロケット (ロング缶)
+#### ロケット(ロング缶)
 ```
 ./stzr -r
 ```
 
-### CAUTION
-これはslコマンド(Copyright 1993,1998,2014 Toyoda Masashi)のオマージュです。一部参考にした要素がございます。LICENSEによれば、すべてが自作であるかのように振る舞わない限り、当該プログラムのコードのコピーや修正、改善を認めるとのこと。
 
-https://github.com/mtoyoda/sl
+## Requirement
+  - gcc
+   - Cプログラムをコンパイルするため
+   - ライブラリに`ncurses`が必要
+
+
+## License
+これは、[slコマンド](https://github.com/mtoyoda/sl)のオマージュである。一部参考にした要素がある。同コマンドのLICENSEによれば、利用したものを自作であるかのように振る舞わない限り、コピーを含めて、自由に利用を認めるとのこと。stzrコマンドのリポジトリ内で該当するファイルには、規定によりslコマンドのLICENSEを全文表示してある。
+
+slコマンドのLicenseは、`MIT License`に準拠する。
+
+
+## CAUTION
+お酒は二十歳になってから(stzrコマンドは年齢問わず、どなたでもご利用いただけます)
