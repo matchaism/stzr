@@ -1,16 +1,16 @@
 /*====================**
-About license of strz.c
+About license
+This is a homage to sl(https://github.com/mtoyoda/sl).
+--- License of "sl" from here
+Copyright 1993,1998,2014 Toyoda Masashi (mtoyoda@acm.org)
 
-Some ideas are from sl(https://github.com/mtoyoda/sl).:
-Copyright 1993,1998,2014-2015 Toyoda Masashi (mtoyoda@acm.org)
-
-license of "sl" from here
 Everyone is permitted to do anything on this program including copying,
 modifying, and improving, unless you try to pretend that you wrote it.
 i.e., the above copyright notice has to appear in all copies.
 THE AUTHOR DISCLAIMS ANY RESPONSIBILITY WITH REGARD TO THIS SOFTWARE.
-license of "sl" to here
+--- License of "sl" ends here
 **====================*/
+
 
 #include <ncurses.h>
 #include <unistd.h>
@@ -39,13 +39,16 @@ void option(char *op){
       case 'A': LABEL = 3; break;
       case 'O': LABEL = 4; break;
       case 'Y': LABEL = 5; break;
-      case 'K': LABEL = 6; break;
+      case 'U': LABEL = 6; break;
       case 'C': LABEL = 7; break;
       case 'B': LABEL = 8; break;
       case 'P': LABEL = 9; break;
       case 'G': LABEL = 10; break;
       case 'D': LABEL = 11; break;
       case 'M': LABEL = 12; break;
+      case 'R': LABEL = 13; break;
+      case 'I': LABEL = 14; break;
+      case 'K': LABEL = 15; break;
       case 'p': PULLTAB = 1; break;
       case 'l': LONG = 1; ArtWidth = 19; ArtHeight = 21; break;
       case 's': SS = 1; ArtWidth = 27; ArtHeight = 20; break;
@@ -61,7 +64,6 @@ int main(int argc, char *argv[]){
   for(int i = 1; i < argc; i++){
     if(*argv[i] == '-') option(argv[i] + 1);
   }
-
 
   //----- PLAY -----//
   initscr();
@@ -92,7 +94,7 @@ void normal(){
   int H, W; getmaxyx(stdscr, H, W);
   int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2;
 
-
+  //----- -----//
   if(LONG == 0){
     for(int i = 0; i < ArtHeight - 3; i++){
       mvaddstr(h + 3 + i, w, ArtS[i]);
@@ -130,7 +132,7 @@ void spaceshuttle(){
   int FireHeight = 8, FontHeight = 8, FontWidth = 72;
   int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2, hf = (H - FontHeight + 1) / 2, wf = (W - FontWidth + 1) / 2;
 
-
+  //----- -----//
   for(int i = 0; i < ArtHeight; i++){
     mvaddstr(h - 2 + i, w, Art10[i]);
     if(i == 12) mvaddstr(h + 10, w + 4, label[LABEL]);
@@ -175,7 +177,7 @@ void spaceshuttle(){
   for(int i = 0; i < FireHeight; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
   refresh(); sleep(1);
 
-
+  //----- -----//
   clear();
   for(int i = 0; i < ArtHeight; i++){
     mvaddstr(h - 2 + i, w, SpaceShuttle[i]);
@@ -184,7 +186,7 @@ void spaceshuttle(){
   for(int i = 0; i < FireHeight; i++) mvaddstr(h + 18 + i, w, SSFire[i]);
   refresh(); usleep(500000);
 
-
+  //----- -----//
   for(int i = 0, k = h + ArtHeight + FireHeight; k >= 0; i++, k--){
     clear();
     for(int j = 0; j < ArtHeight; j++){
@@ -203,10 +205,9 @@ void rocket(){
   int FireHeight = 5, FontHeight = 8, FontWidth = 72;
   int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2, hf = (H - FontHeight + 1) / 2, wf = (W - FontWidth + 1) / 2;
 
-
+  //----- -----//
   for(int i = 0; i < ArtHeight; i++) mvaddstr(h + i, w, Rocket[i]);
   refresh(); sleep(1);
-
 
   //----- Count -----//
   for(int i = 0; i < 10; i++){
@@ -217,11 +218,9 @@ void rocket(){
     refresh(); sleep(1);
   }
 
-
   //----- Ignition -----//
   for(int i = 0; i < FontHeight; i++) mvaddstr(hf + i, wf, Ignition[i]);
   refresh(); sleep(1);
-
 
   //----- Take off -----//
   for(int i = 0, k = h + ArtHeight + FireHeight; k >= 0; i++, k--){

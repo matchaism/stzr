@@ -49,20 +49,23 @@ char Art02[3][20]={
   "        ___        ",
   "       /---\\       "};
 
-char label[13][20] = {
-  "|                 |", //0
-  "|   GRAPEFRUIT    |", //1,F
-  "|      LEMON      |", //2,L
-  "|      APPLE      |", //3,A
-  "|     ORANGE      |", //4,O
-  "|      YUZU       |", //5,Y
-  "|   KANJUKU-UME   |", //6,K
-  "| CITRUS DEPRESSA |", //7,C
-  "|  BITTER  LEMON  |", //8,B
-  "|      PEACH      |", //9,P
+char label[16][20] = {
+  "|                 |",  //0
+  "|   GRAPEFRUIT    |",  //1,F
+  "|      LEMON      |",  //2,L
+  "|      APPLE      |",  //3,A
+  "|     ORANGE      |",  //4,O
+  "|      YUZU       |",  //5,Y
+  "|   KANJUKU-UME   |",  //6,U
+  "| CITRUS DEPRESSA |",  //7,C
+  "|  BITTER  LEMON  |",  //8,B
+  "|      PEACH      |",  //9,P
   "|      GRAPE      |", //10,G
   "|       DRY       |", //11,D
-  "|      MELON      |"}; //12,M
+  "|      MELON      |", //12,M
+  "|     ACEROLA     |", //13,R
+  "|    PINEAPPLE    |", //14,I
+  "|      MIKAN      |"};//15,K
 
 
 char SpaceShuttle[20][28]={
