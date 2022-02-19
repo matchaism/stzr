@@ -16,8 +16,7 @@ license of "sl" to here
 #include <unistd.h>
 #include "AA.h"
 
-int ArtWidth = 19;
-int ArtHeight = 17;
+int ArtWidth = 19, ArtHeight = 17;
 int LABEL = 0;
 int PULLTAB = 0;
 int LONG = 0;
@@ -48,20 +47,9 @@ void option(char *op){
       case 'D': LABEL = 11; break;
       case 'M': LABEL = 12; break;
       case 'p': PULLTAB = 1; break;
-      case 'l':
-        LONG = 1;
-        ArtWidth = 19;
-        ArtHeight = 21;
-        break;
-      case 's':
-        SS = 1;
-        ArtWidth = 27;
-        ArtHeight = 20;
-        break;
-      case 'r':
-        ROCKET = 1;
-        ArtWidth = 25;
-        ArtHeight = 23;
+      case 'l': LONG = 1; ArtWidth = 19; ArtHeight = 21; break;
+      case 's': SS = 1; ArtWidth = 27; ArtHeight = 20; break;
+      case 'r': ROCKET = 1; ArtWidth = 25; ArtHeight = 23; break;
       default: break;
     }
   }
@@ -69,11 +57,6 @@ void option(char *op){
 
 
 int main(int argc, char *argv[]){
-  //----- DEFINE -----//
-  int H, W;
-  getmaxyx(stdscr, H, W);
-
-
   //----- OPTION -----//
   for(int i = 1; i < argc; i++){
     if(*argv[i] == '-') option(argv[i] + 1);
@@ -106,10 +89,8 @@ int main(int argc, char *argv[]){
 
 void normal(){
   //----- DEFINE -----//
-  int H, W, h, w;
-  getmaxyx(stdscr, H, W);
-  h = (H - ArtHeight + 1) / 2;
-  w = (W - ArtWidth + 1) / 2;
+  int H, W; getmaxyx(stdscr, H, W);
+  int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2;
 
 
   if(LONG == 0){
@@ -145,12 +126,9 @@ void normal(){
 
 void spaceshuttle(){
   //----- DEFINE -----//
-  int H, W, FireHeight = 8, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
-  getmaxyx(stdscr, H, W);
-  h = (H - ArtHeight + 1) / 2;
-  w = (W - ArtWidth + 1) / 2;
-  hf = (H - FontHeight + 1) / 2;
-  wf = (W - FontWidth + 1) / 2;
+  int H, W; getmaxyx(stdscr, H, W);
+  int FireHeight = 8, FontHeight = 8, FontWidth = 72;
+  int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2, hf = (H - FontHeight + 1) / 2, wf = (W - FontWidth + 1) / 2;
 
 
   for(int i = 0; i < ArtHeight; i++){
@@ -221,12 +199,9 @@ void spaceshuttle(){
 
 void rocket(){
   //----- DEFINE -----//
-  int H, W, FireHeight = 5, FontHeight = 8, FontWidth = 72, h, w, hf, wf;
-  getmaxyx(stdscr, H, W);
-  h = (H - ArtHeight + 1) / 2;
-  w = (W - ArtWidth + 1) / 2;
-  hf = (H - FontHeight + 1) / 2;
-  wf = (W - FontWidth + 1) / 2;
+  int H, W; getmaxyx(stdscr, H, W);
+  int FireHeight = 5, FontHeight = 8, FontWidth = 72;
+  int h = (H - ArtHeight + 1) / 2, w = (W - ArtWidth + 1) / 2, hf = (H - FontHeight + 1) / 2, wf = (W - FontWidth + 1) / 2;
 
 
   for(int i = 0; i < ArtHeight; i++) mvaddstr(h + i, w, Rocket[i]);
